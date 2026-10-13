@@ -1,0 +1,90 @@
+/* WorkMate Design Tokens v0.1
+   Contrast-checked (WCAG 2.2). See brand/index.html for usage rules. */
+:root {
+  /* ── Neutrals ─────────────────────────────── */
+  --wm-ink:        #14161F;  /* primary text, dark surfaces */
+  --wm-ink-2:      #4A4F5E;  /* secondary text — 8.0:1 on paper */
+  --wm-ink-3:      #6B7080;  /* muted text — paper ONLY (4.86:1); fails on paper-2 */
+  --wm-paper:      #FFFDF8;  /* page background (warm white) */
+  --wm-paper-2:    #F4F1EA;  /* sunken sections, table stripes */
+  --wm-white:      #FFFFFF;  /* raised cards */
+  --wm-line:       #E6E1D6;  /* hairlines, dividers */
+  --wm-line-strong:#C9C3B6;  /* input borders (3:1 non-text vs paper) */
+
+  /* ── Department colours: base / tint / deep ──
+     base = fills & shapes; tint = soft backgrounds; deep = text & icons on tint/paper */
+  --wm-sales:       #FF6B2C; --wm-sales-tint:     #FFE9DE; --wm-sales-deep:     #A33A0B;
+  --wm-marketing:   #F0388B; --wm-marketing-tint: #FDE3EF; --wm-marketing-deep: #A3125A;
+  --wm-finance:     #12A36B; --wm-finance-tint:   #DDF5EA; --wm-finance-deep:   #0B6B46;
+  --wm-design:      #7B4DFF; --wm-design-tint:    #ECE5FF; --wm-design-deep:    #4B22C9;
+  --wm-people:      #FFB800; --wm-people-tint:    #FFF3CC; --wm-people-deep:    #7A5800;
+  --wm-exec:        #2457D6; --wm-exec-tint:      #E1EAFC; --wm-exec-deep:      #1A3F9E;
+  --wm-service:     #00A3B4; --wm-service-tint:   #D9F4F6; --wm-service-deep:   #00636E;
+
+  /* Text colour to place ON each base fill (contrast-verified) */
+  --wm-on-sales: var(--wm-ink);      /* 6.35:1 */
+  --wm-on-marketing: var(--wm-ink);  /* 4.85:1 */
+  --wm-on-finance: var(--wm-ink);    /* 5.56:1 */
+  --wm-on-design: var(--wm-white);   /* 4.83:1 */
+  --wm-on-people: var(--wm-ink);     /* 10.4:1 */
+  --wm-on-exec: var(--wm-white);     /* 6.16:1 */
+  --wm-on-service: var(--wm-ink);    /* 5.92:1 */
+
+  /* ── Semantic ─────────────────────────────── */
+  --wm-primary:       var(--wm-ink);      /* primary CTA = ink, so department colours stay meaningful */
+  --wm-primary-hover: #2A2E3B;
+  --wm-accent:        var(--wm-exec);
+  --wm-success:       var(--wm-finance-deep);
+  --wm-warning:       var(--wm-people-deep);
+  --wm-danger:        #C2261B;
+  --wm-focus:         var(--wm-exec);
+
+  /* ── Typography ───────────────────────────── */
+  --wm-font-display: "Bricolage Grotesque", "Avenir Next", "Avenir", "Segoe UI", system-ui, sans-serif;
+  --wm-font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --wm-font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Fluid display scale (marketing) */
+  --wm-text-hero: clamp(48px, 7.2vw, 148px);  /* lh 0.95, ls -0.035em, 800 */
+  --wm-text-h1:   clamp(40px, 5vw, 104px);     /* lh 1.0,  ls -0.03em,  800 */
+  --wm-text-h2:   clamp(32px, 3.6vw, 76px);   /* lh 1.05, ls -0.025em, 800 */
+  --wm-text-h3:   clamp(24px, 2.2vw, 44px);   /* lh 1.15, ls -0.015em, 700 */
+  --wm-text-h4:   1.25rem;                        /* lh 1.3, 700 */
+  --wm-text-lead: clamp(18px, 1.3vw, 28px);   /* lh 1.5, 400 */
+  --wm-text-body: 1rem;                        /* lh 1.6 */
+  --wm-text-sm:   .875rem;                        /* lh 1.5 */
+  --wm-text-xs:   .75rem;                        /* lh 1.4, eyebrow: 700 uppercase ls .1em */
+
+  /* ── Space (4px base) ─────────────────────── */
+  --wm-s-1: 4px;  --wm-s-2: 8px;  --wm-s-3: 12px; --wm-s-4: 16px;
+  --wm-s-5: 24px; --wm-s-6: 32px; --wm-s-7: 48px; --wm-s-8: 64px;
+  --wm-s-9: 96px; --wm-s-10: 128px;
+  --wm-section-y: clamp(80px, 9vw, 200px);
+  --wm-container: none;      /* fluid: content fills the screen, gutters scale */
+  --wm-gutter: clamp(20px, 5vw, 128px);
+
+  /* ── Shape ────────────────────────────────── */
+  --wm-r-sm: 8px;    /* chips, inputs */
+  --wm-r-md: 14px;   /* buttons, small cards */
+  --wm-r-lg: 24px;   /* cards */
+  --wm-r-xl: 36px;   /* hero panels, module cards */
+  --wm-r-pill: 999px;
+
+  /* ── Elevation: flat + offset "sticker" shadow ── */
+  --wm-shadow-1: 0 1px 2px rgba(20,22,31,.06), 0 2px 8px rgba(20,22,31,.05);
+  --wm-shadow-2: 0 4px 12px rgba(20,22,31,.08), 0 16px 40px rgba(20,22,31,.08);
+  --wm-shadow-pop: 6px 6px 0 var(--wm-ink);   /* signature hard shadow, use sparingly */
+
+  /* ── Motion ───────────────────────────────── */
+  --wm-ease-out:    cubic-bezier(.22, 1, .36, 1);
+  --wm-ease-snap:   cubic-bezier(.16, 1, .3, 1);   /* expo-out: fast settle, no overshoot */
+  --wm-ease-inout:  cubic-bezier(.65, 0, .35, 1);
+  --wm-dur-1: 120ms;  /* hover, press */
+  --wm-dur-2: 220ms;  /* tabs, toggles */
+  --wm-dur-3: 420ms;  /* reveals */
+  --wm-dur-4: 900ms;  /* hero weave */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --wm-dur-1: 0ms; --wm-dur-2: 0ms; --wm-dur-3: 0ms; --wm-dur-4: 0ms; }
+}
